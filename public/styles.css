@@ -1,5 +1,5 @@
-h1 {
-  margin-bottom: 50px;
+header {
+  margin-bottom: 25px;
 }
 
 h2 {
@@ -32,10 +32,9 @@ a:visited {
 @media (max-width: 750px) {
   html {
     font-size: 20px;
-    line-height: 22px;
   }
   header {
-    font-size: 22px;
+    display: block;
   }
   #projects-grid {
     grid-template-columns: 1fr 1fr;
