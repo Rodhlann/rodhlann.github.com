@@ -69,7 +69,7 @@ const fetchRSSFeed = async (): Promise<Item[]> => {
 
 // Separator Component
 const Separator: React.FC = () => (
-  <div className="h-px mt-4 mb-4 ml-4 relative overflow-hidden first:mt-0 last:mb-0">
+  <div className="h-px mt-4 mb-4 m:ml-4 relative overflow-hidden first:mt-0 last:mb-0">
     <div className="absolute inset-0 bg-gradient-to-r from-turquoise/50 to-transparent transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out" />
   </div>
 );
@@ -126,7 +126,7 @@ const CommandBlock: React.FC<CommandBlockProps> = ({ command, children, headerVi
               )}
             </div>
           </div>
-          <div className={`pl-4 ${contentVisible ? 'animate-fadeIn' : 'hidden'}`}>
+          <div className={`pl-2 md:pl-4 ${contentVisible ? 'animate-fadeIn' : 'hidden'}`}>
             {children}
           </div>
           <Separator />
@@ -175,8 +175,8 @@ const App: React.FC = () => {
   }, []);
 
   return (
-    <div className="bg-gray-950 text-gray-300 p-6 min-h-screen font-mono pt-0 md:pt-6">
-      <div className="max-w-3xl mx-auto">
+    <div className="bg-gray-950 text-gray-300 p-6 min-h-screen font-mono pt-0 md:pt-6 md:px-0">
+      <div className="max-w-3xl mx-auto md:px-6">
         <CommandBlock 
           command="cd ~/timpepper_dev" 
           headerVisible={visibleSections.profile.header}
@@ -206,7 +206,7 @@ const App: React.FC = () => {
             headerVisible={visibleSections.contact.header}
             contentVisible={visibleSections.contact.content}
           >
-            <div className="flex space-x-6">
+            <div className="flex md:flex-row flex-col md:space-x-4 space-y-2 md:space-y-0">
               <a href="https://github.com/rodhlann" className="text-purple-300 hover:text-turquoise transition-colors duration-300 flex items-center space-x-1">
                 <FaGithub />
                 <span className='hover:underline text-gray-300'>GitHub</span>
