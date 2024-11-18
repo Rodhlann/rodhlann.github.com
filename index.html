@@ -1,95 +1,13 @@
-<!DOCTYPE html>
-
-<html>
+<!doctype html>
+<html lang="en">
   <head>
-    <meta http-equiv="Content-Type" content="text/html, charset=UTF-8" />
-    <link rel="icon" href="./public/terminal.png" type="image/x-icon">
-    <link rel="stylesheet" href="./public/styles.css" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0," />
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="./terminal.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>timpepper.dev</title>
-    <style>
-      html {
-        display: flex;
-        justify-content: space-around;
-        font-family: "Lucida Console", Monaco, monospace;
-        font-size: 16px;
-        letter-spacing: 0.02rem;
-        color: #c5c5c5;
-        background-color: #0f1419;
-      }
-
-      body {
-        display: flex;
-        flex-direction: column;
-        width: 50vw;
-      }
-
-      @media (max-width: 750px) {
-        html {
-          line-height: 22px;
-        }
-        body {
-          width: 100%;
-          margin-top: 10px;
-        }
-        header {
-          font-size: 18px;
-          height: 40px;
-        }
-        h1 {
-          font-size: 25px;
-        }
-
-        h2 {
-          font-size: 23px;
-        }
-
-        h3 {
-          font-size: 20px;
-        }
-      }
-    </style>
   </head>
   <body>
-    <header>
-      <h1>timpepper.dev</h1>
-    </header>
-    <div>
-      <p>
-        Hey there, I'm Tim Pepper, a software developer with almost a decade in
-        the field. I have been lucky to collaborate with several diverse teams
-        and companies over the years, mainly diving into web app and API
-        development using Node.js, Java, React, and Angular. Always up for a new
-        challenge, I love diving into different projects and sharing my insights
-        with fellow enthusiasts. You'll find me here on my website, hacking away
-        and blogging about my latest projects and ideas. Feel free to reach out!
-      </p>
-      <h2>Recent Projects</h2>
-      <div id="projects-grid">
-        <div class="grid-cell">
-          <a href="https://timpepper.dev/blog">My dev blog or something</a>
-        </div>
-        <div class="grid-cell"><a href="./a-star">A* Search Algorithm in JavaScript</a></div>
-        <div class="grid-cell">
-          <a href="https://rss-reader-next.vercel.app">RSS Reader</a>
-        </div>
-        <div class="grid-cell">
-          <a href="https://github.com/Rodhlann/rust-astar"
-            >A* Search Algorithm in Rust</a
-          >
-        </div>
-        <div class="grid-cell">
-          <a href="https://github.com/Rodhlann/rust-snake"
-            >Snake Game in Rust</a
-          >
-        </div>
-      </div>
-      <h2>Info</h2>
-      <p>
-        <b>GitHub:</b>
-        <a href="https://github.com/Rodhlann">https://github.com/Rodhlann</a>
-      </p>
-      <p><b>Email:</b> tim@timpepper.dev</p>
-    </div>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
