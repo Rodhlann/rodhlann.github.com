@@ -45,6 +45,9 @@ jobs:
           name: production-files
           path: ./dist
 
+      - name: Install Git
+        run: sudo apt-get install git
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
