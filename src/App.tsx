@@ -54,7 +54,7 @@ const fetchRSSFeed = async (): Promise<Item[]> => {
     const doc = new DOMParser().parseFromString(xml, 'application/xml');
     const items = doc.querySelectorAll('item');
 
-    return Array.from(items).slice(-3).map(item => ({
+    return Array.from(items).slice(0, 3).map(item => ({
       name: item.querySelector('title')?.textContent || '',
       desc: item.querySelector('description')?.textContent || '',
       tags: item.querySelector('category')?.textContent?.split(',') || [],
