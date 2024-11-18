@@ -1,0 +1,42 @@
+header {
+  margin-bottom: 25px;
+}
+
+h2 {
+  margin-top: 50px;
+}
+
+#projects-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+}
+
+.grid-cell {
+  background-color: #1a1f25;
+  text-align: center;
+  border: 1px solid #23282f;
+  border-radius: 5px;
+  padding: 10px 10px;
+  min-height: 50px;
+}
+
+a {
+  color: #c5c5c5;
+}
+
+a:visited {
+  color: #c5c5c5;
+}
+
+@media (max-width: 750px) {
+  html {
+    font-size: 20px;
+  }
+  header {
+    display: block;
+  }
+  #projects-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
