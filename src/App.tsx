@@ -103,14 +103,22 @@ type CommandBlockProps = {
   headerVisible: boolean;
   contentVisible: boolean;
   header?: boolean;
+  isLast?: boolean;
 };
 
-const CommandBlock: React.FC<CommandBlockProps> = ({ command, children, headerVisible, contentVisible, header }) => {
+const CommandBlock: React.FC<CommandBlockProps> = ({ 
+  command, 
+  children, 
+  headerVisible, 
+  contentVisible, 
+  header, 
+  isLast 
+}) => {
   const [commandPrefix, commandSuffix] = command.split('/');
 
   return (
     headerVisible && (
-    <div className="group mb-4">
+    <div className={`group ${isLast && 'pb-4'}`}>
       <>
         { header || <Separator /> }
         <div className="flex items-center space-x-2 mb-2">
@@ -241,6 +249,7 @@ const App: React.FC = () => {
             command="ls ./blog/latest"
             headerVisible={visibleSections.blog.header}
             contentVisible={visibleSections.blog.content}
+            isLast
           >
             <div className="grid gap-4">
               {posts.map(post => (
