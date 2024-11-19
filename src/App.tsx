@@ -109,31 +109,30 @@ const CommandBlock: React.FC<CommandBlockProps> = ({ command, children, headerVi
   const [commandPrefix, commandSuffix] = command.split('/');
 
   return (
+    headerVisible && (
     <div className="group mb-4">
-      {headerVisible && (
-        <>
-          <Separator />
-          <div className="flex items-center space-x-2 mb-2">
-            <div className="text-turquoise/70">❯</div>
-            <div className="text-purple-300">
-              {header ? (
-                <span className="text-xl font-semibold">
-                  <span>{commandPrefix}/</span>
-                  <span className="text-turquoise">{commandSuffix}</span>
-                </span>
-              ) : (
-                command
-              )}
-            </div>
+      <>
+        { header || <Separator /> }
+        <div className="flex items-center space-x-2 mb-2">
+          <div className="text-turquoise/70">❯</div>
+          <div className="text-purple-300">
+            {header ? (
+              <span className="text-xl font-semibold">
+                <span>{commandPrefix}/</span>
+                <span className="text-turquoise">{commandSuffix}</span>
+              </span>
+            ) : (
+              command
+            )}
           </div>
-          <div className={`pl-2 md:pl-4 ${contentVisible ? 'animate-fadeIn' : 'hidden'}`}>
-            {children}
-          </div>
-          <Separator />
-        </>
-      )}
+        </div>
+        <div className={`md:pl-4 ${contentVisible ? 'animate-fadeIn' : 'hidden'}`}>
+          {children}
+        </div>
+        <Separator />
+      </>
     </div>
-  );
+  ));
 };
 
 
@@ -175,7 +174,7 @@ const App: React.FC = () => {
   }, []);
 
   return (
-    <div className="bg-gray-950 text-gray-300 p-6 min-h-screen font-mono pt-0 md:pt-6 md:px-0">
+    <div className="bg-gray-950 text-gray-300 p-6 min-h-screen font-mono">
       <div className="max-w-3xl mx-auto md:px-6">
         <CommandBlock 
           command="cd ~/timpepper_dev" 
@@ -207,19 +206,19 @@ const App: React.FC = () => {
             contentVisible={visibleSections.contact.content}
           >
             <div className="flex md:flex-row flex-col md:space-x-4 space-y-2 md:space-y-0">
-              <a href="https://github.com/rodhlann" className="text-purple-300 hover:text-turquoise transition-colors duration-300 flex items-center space-x-1">
+              <a href="https://github.com/rodhlann" className="text-purple-300 hover:text-turquoise transition-colors duration-300 flex items-center space-x-1 w-fit">
                 <FaGithub />
                 <span className='hover:underline text-gray-300'>GitHub</span>
               </a>
-              <a href="https://hachyderm.io/@rodhlann" className="text-purple-300 hover:text-turquoise transition-colors duration-300 flex items-center space-x-1">
+              <a href="https://hachyderm.io/@rodhlann" className="text-purple-300 hover:text-turquoise transition-colors duration-300 flex items-center space-x-1 w-fit">
                 <FaMastodon />
                 <span className='hover:underline text-gray-300'>Mastodon</span>
               </a>
-              <a href="https://www.linkedin.com/in/tim-pepper-8656a36b/" className="text-purple-300 hover:text-turquoise transition-colors duration-300 flex items-center space-x-1">
+              <a href="https://www.linkedin.com/in/tim-pepper-8656a36b/" className="text-purple-300 hover:text-turquoise transition-colors duration-300 flex items-center space-x-1 w-fit">
                 <FaLinkedin />
                 <span className='hover:underline text-gray-300'>LinkedIn</span>
               </a>
-              <a href="mailto:tim@timpepper.dev" className="text-purple-300 hover:text-turquoise transition-colors duration-300 flex items-center space-x-1">
+              <a href="mailto:tim@timpepper.dev" className="text-purple-300 hover:text-turquoise transition-colors duration-300 flex items-center space-x-1 w-fit">
                 <LuMail />
                 <span className='hover:underline text-gray-300'>Email</span>
               </a>
@@ -249,11 +248,10 @@ const App: React.FC = () => {
               ))}
             </div>
           </CommandBlock>
-
-          <div className="flex items-center space-x-2">
-            <span className="text-turquoise/70">❯</span>
-            <span className="blinking-cursor">█</span>
-          </div>
+        </div>
+        <div className="space-x-2 mt-0.5">
+          <span className="text-turquoise/70">❯</span>
+          <span className="blinking-cursor">█</span>
         </div>
       </div>
     </div>
