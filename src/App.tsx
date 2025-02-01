@@ -262,7 +262,6 @@ const App: React.FC = () => {
         <div className="space-x-2 mt-0.5">
           <span className="text-turquoise/70">❯</span>
           <span className="blinking-cursor">█</span>
-          <a rel="me" href="https://hachyderm.io/@rodhlann">Mastodon</a>
         </div>
       </div>
     </div>
