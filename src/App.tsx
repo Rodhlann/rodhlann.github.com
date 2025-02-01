@@ -219,7 +219,7 @@ const App: React.FC = () => {
                 <FaGithub />
                 <span className='hover:underline text-gray-300'>GitHub</span>
               </a>
-              <a href="https://hachyderm.io/@rodhlann" className="text-purple-300 hover:text-turquoise transition-colors duration-300 flex items-center space-x-1 w-fit">
+              <a rel="me" href="https://hachyderm.io/@rodhlann" className="text-purple-300 hover:text-turquoise transition-colors duration-300 flex items-center space-x-1 w-fit">
                 <FaMastodon />
                 <span className='hover:underline text-gray-300'>Mastodon</span>
               </a>
